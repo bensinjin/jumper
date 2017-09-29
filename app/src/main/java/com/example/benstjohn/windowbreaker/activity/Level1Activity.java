@@ -7,15 +7,15 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.example.benstjohn.windowbreaker.GameManager;
+import com.example.benstjohn.windowbreaker.util.LevelManager;
 import com.example.benstjohn.windowbreaker.R;
 import com.example.benstjohn.windowbreaker.component.WindowButton;
 import com.example.benstjohn.windowbreaker.entity.LevelScore;
-import com.example.benstjohn.windowbreaker.async.LevelScorer;
+import com.example.benstjohn.windowbreaker.async.LevelScorePersist;
 import com.example.benstjohn.windowbreaker.async.LevelScorerParams;
 
 public class Level1Activity extends AppCompatActivity {
-    private GameManager gm = GameManager.getInstance();
+    private LevelManager gm = LevelManager.getInstance();
     private final int levelScoreID = 1;
 
     @Override
@@ -49,6 +49,7 @@ public class Level1Activity extends AppCompatActivity {
                 {0, 3, 0},
                 {20, 3, 5},
                 {0, 20, 18},
+                {20, 0, 3},
         };
         // Level grid.
         for (int x = 0; x < grid.length; x ++) {
@@ -92,7 +93,7 @@ public class Level1Activity extends AppCompatActivity {
                         new LevelScorerParams(getApplicationContext(),
                         new LevelScore(levelScoreID, gm.score, gm.possibleScore));
 
-                new LevelScorer().execute(params);
+                new LevelScorePersist().execute(params);
             }
         }.start();
     }

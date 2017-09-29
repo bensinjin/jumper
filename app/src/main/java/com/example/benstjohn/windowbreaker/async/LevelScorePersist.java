@@ -10,14 +10,11 @@ import com.example.benstjohn.windowbreaker.entity.LevelScore;
  * Created by benstjohn on 2017-09-28.
  */
 
-public class LevelScorer extends AsyncTask<LevelScorerParams, Void, Void> {
+public class LevelScorePersist extends AsyncTask<LevelScorerParams, Void, Void> {
     protected Void doInBackground(LevelScorerParams... params) {
         // TODO should this return something?
         for (LevelScorerParams param : params) {
-            // TODO this can be improved...
-            // Let's try and emulate: https://riggaroo.co.za/android-architecture-components-looking-room-livedata-part-1/ for my room config.
-            // Use DI etc...
-            AppDatabase db = Room.databaseBuilder(param.getContext().getApplicationContext(), AppDatabase.class, "jumper").build();
+            AppDatabase db = AppDatabase.getInstance(param.getContext());
             LevelScore existingLevelScore = db.LevelScoreDao().getLevelScore(param.getLevelScore().getId());
             LevelScore currentLevelScore = param.getLevelScore();
             // If we couldn't load a LevelScore by this id insert the new one.

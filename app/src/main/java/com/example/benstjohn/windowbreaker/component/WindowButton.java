@@ -8,7 +8,7 @@ import android.support.v7.widget.AppCompatButton;
 import android.view.Gravity;
 import android.view.View;
 
-import com.example.benstjohn.windowbreaker.GameManager;
+import com.example.benstjohn.windowbreaker.util.LevelManager;
 
 import java.util.Random;
 
@@ -23,7 +23,7 @@ public class WindowButton extends AppCompatButton {
     private boolean isActive;
     private long millisRemaining;
     private boolean isEmpty;
-    private GameManager gm = GameManager.getInstance();
+    private LevelManager gm = LevelManager.getInstance();
 
     public WindowButton(Context context, final long millisInFuture, long countDownInterval, boolean isActive, boolean isEmpty) {
         super(context);

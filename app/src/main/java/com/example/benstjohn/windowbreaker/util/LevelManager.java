@@ -1,25 +1,20 @@
-package com.example.benstjohn.windowbreaker;
+package com.example.benstjohn.windowbreaker.util;
 
 /**
  * Created by benstjohn on 2017-09-24.
  */
 
-public class GameManager {
-    private static final GameManager ourInstance = new GameManager();
+public class LevelManager {
+    private static final LevelManager ourInstance = new LevelManager();
     public static int score = 0;
     public static int possibleScore = 0;
     public static int pointsLeftInPlay = 0;
 
-    public static GameManager getInstance() {
+    public static LevelManager getInstance() {
         return ourInstance;
     }
 
-    private GameManager() {}
-
-
-    public static void persistScore(String level, int score, int possibleScore) {
-        // TODO
-    }
+    private LevelManager() {}
 
     public static int getScorePercent(int score, int total) {
         return total > 0 ? score / total * 100 : 0;
