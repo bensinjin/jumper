@@ -1,4 +1,4 @@
-package com.example.benstjohn.windowbreaker.activities;
+package com.example.benstjohn.windowbreaker.activity;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -9,10 +9,10 @@ import android.widget.TextView;
 
 import com.example.benstjohn.windowbreaker.GameManager;
 import com.example.benstjohn.windowbreaker.R;
-import com.example.benstjohn.windowbreaker.components.WindowButton;
-import com.example.benstjohn.windowbreaker.database.LevelScore;
-import com.example.benstjohn.windowbreaker.database.LevelScorer;
-import com.example.benstjohn.windowbreaker.database.LevelScorerParams;
+import com.example.benstjohn.windowbreaker.component.WindowButton;
+import com.example.benstjohn.windowbreaker.entity.LevelScore;
+import com.example.benstjohn.windowbreaker.async.LevelScorer;
+import com.example.benstjohn.windowbreaker.async.LevelScorerParams;
 
 public class Level1Activity extends AppCompatActivity {
     private GameManager gm = GameManager.getInstance();

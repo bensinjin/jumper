@@ -1,4 +1,4 @@
-package com.example.benstjohn.windowbreaker.activities;
+package com.example.benstjohn.windowbreaker.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

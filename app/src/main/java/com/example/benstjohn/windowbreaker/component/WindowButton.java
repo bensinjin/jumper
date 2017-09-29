@@ -1,4 +1,4 @@
-package com.example.benstjohn.windowbreaker.components;
+package com.example.benstjohn.windowbreaker.component;
 
 import android.content.Context;
 import android.graphics.Color;

@@ -1,7 +1,10 @@
-package com.example.benstjohn.windowbreaker.database;
+package com.example.benstjohn.windowbreaker.async;
 
 import android.arch.persistence.room.Room;
 import android.os.AsyncTask;
+
+import com.example.benstjohn.windowbreaker.database.AppDatabase;
+import com.example.benstjohn.windowbreaker.entity.LevelScore;
 
 /**
  * Created by benstjohn on 2017-09-28.

@@ -1,4 +1,4 @@
-package com.example.benstjohn.windowbreaker.database;
+package com.example.benstjohn.windowbreaker.entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;

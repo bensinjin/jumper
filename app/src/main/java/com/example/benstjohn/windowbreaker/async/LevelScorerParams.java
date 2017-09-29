@@ -1,6 +1,8 @@
-package com.example.benstjohn.windowbreaker.database;
+package com.example.benstjohn.windowbreaker.async;
 
 import android.content.Context;
+
+import com.example.benstjohn.windowbreaker.entity.LevelScore;
 
 /**
  * Created by benstjohn on 2017-09-28.
