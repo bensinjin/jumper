@@ -1,4 +1,4 @@
-package com.example.benstjohn.windowbreaker.util;
+package com.example.benstjohn.jumper.util;
 
 /**
  * Created by benstjohn on 2017-09-24.

@@ -1,4 +1,4 @@
-package com.example.benstjohn.windowbreaker;
+package com.example.benstjohn.jumper;
 
 import org.junit.Test;
 

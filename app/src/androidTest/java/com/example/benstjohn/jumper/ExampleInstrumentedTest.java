@@ -1,4 +1,4 @@
-package com.example.benstjohn.windowbreaker;
+package com.example.benstjohn.jumper;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

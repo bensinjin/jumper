@@ -1,22 +1,24 @@
-package com.example.benstjohn.windowbreaker.activity;
+package com.example.benstjohn.jumper.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.example.benstjohn.windowbreaker.util.LevelManager;
-import com.example.benstjohn.windowbreaker.R;
-import com.example.benstjohn.windowbreaker.component.WindowButton;
-import com.example.benstjohn.windowbreaker.entity.LevelScore;
-import com.example.benstjohn.windowbreaker.async.LevelScorePersist;
-import com.example.benstjohn.windowbreaker.async.LevelScorerParams;
+import com.example.benstjohn.jumper.R;
+import com.example.benstjohn.jumper.async.LevelScorePersist;
+import com.example.benstjohn.jumper.component.WindowButton;
+import com.example.benstjohn.jumper.entity.LevelScore;
+import com.example.benstjohn.jumper.util.LevelManager;
 
-public class Level1Activity extends AppCompatActivity {
+public class Level2Activity extends AppCompatActivity {
     private LevelManager gm = LevelManager.getInstance();
-    private final int levelScoreID = 1;
+    private final int levelScoreID = 2;
+    private final int gameLengthMilis = 10000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +47,12 @@ public class Level1Activity extends AppCompatActivity {
         int[][] grid = new int[][] {
                 {0, 10, 2},
                 {7, 5, 5},
-                {0, 15, 20},
-                {0, 3, 0},
-                {20, 3, 5},
-                {0, 20, 18},
-                {20, 0, 3},
+                {0, 7, 3},
+                {0, 2, 0},
+                {10, 5, 5},
+                {0, 10, 15},
+                {15, 0, 5},
+                {3, 0, 5},
         };
         // Level grid.
         for (int x = 0; x < grid.length; x ++) {
@@ -78,9 +81,9 @@ public class Level1Activity extends AppCompatActivity {
             table.addView(tableRow);
         }
         // Level timer.
-        new CountDownTimer(20000, 1000) {
+        new CountDownTimer(gameLengthMilis, 1000) {
             public void onTick(long millisUntilFinished) {
-                hud.setText("We got " + gm.pointsLeftInPlay + " jumpers!!!");
+                hud.setText(gm.pointsLeftInPlay + " jumpers left!!!");
                 if (gm.pointsLeftInPlay == 0) {
                     cancel();
                     onFinish();
@@ -89,12 +92,14 @@ public class Level1Activity extends AppCompatActivity {
 
             public void onFinish() {
                 hud.setText("Game over! Score: " + gm.score + "/" + gm.possibleScore);
-                LevelScorerParams params =
-                        new LevelScorerParams(getApplicationContext(),
-                        new LevelScore(levelScoreID, gm.score, gm.possibleScore));
-
-                new LevelScorePersist().execute(params);
+                LevelScore ls = new LevelScore(levelScoreID, gm.score, gm.possibleScore);
+                new LevelScorePersist(getApplicationContext(),ls).execute();
             }
         }.start();
+    }
+
+    public void backToLevelSelect(View view) {
+        Intent i = new Intent(this, _MainActivity.class);
+        startActivity(i);
     }
 }

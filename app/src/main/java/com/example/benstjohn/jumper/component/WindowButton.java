@@ -1,4 +1,4 @@
-package com.example.benstjohn.windowbreaker.component;
+package com.example.benstjohn.jumper.component;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -8,7 +8,7 @@ import android.support.v7.widget.AppCompatButton;
 import android.view.Gravity;
 import android.view.View;
 
-import com.example.benstjohn.windowbreaker.util.LevelManager;
+import com.example.benstjohn.jumper.util.LevelManager;
 
 import java.util.Random;
 
@@ -35,7 +35,6 @@ public class WindowButton extends AppCompatButton {
         setGravity(Gravity.CENTER);
         GradientDrawable gd = new GradientDrawable();
         gd.setColor(Color.parseColor("#a5a3a3"));
-        gd.setCornerRadius(5);
         gd.setStroke(1, Color.parseColor("#000000"));
         setBackgroundDrawable(gd);
 
@@ -54,6 +53,9 @@ public class WindowButton extends AppCompatButton {
                 public void onFinish() {
                     if (WindowButton.this.isActive) {
                         WindowButton.this.setText("x_x");
+                        GradientDrawable gd = new GradientDrawable();
+                        gd.setColor(Color.parseColor("#841818"));
+                        setBackgroundDrawable(gd);
                         gm.pointsLeftInPlay --;
 
                     }
@@ -67,6 +69,9 @@ public class WindowButton extends AppCompatButton {
                     if (WindowButton.this.isActive && WindowButton.this.millisRemaining > 0) {
                         WindowButton.this.isActive = false;
                         WindowButton.this.setText("^_^");
+                        GradientDrawable gd = new GradientDrawable();
+                        gd.setColor(Color.parseColor("#6ad16f"));
+                        setBackgroundDrawable(gd);
                         gm.score ++;
                         gm.pointsLeftInPlay --;
                     }

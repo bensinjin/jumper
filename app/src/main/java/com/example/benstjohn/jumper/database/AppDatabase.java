@@ -1,12 +1,12 @@
-package com.example.benstjohn.windowbreaker.database;
+package com.example.benstjohn.jumper.database;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import com.example.benstjohn.windowbreaker.dao.LevelScoreDao;
-import com.example.benstjohn.windowbreaker.entity.LevelScore;
+import com.example.benstjohn.jumper.dao.LevelScoreDao;
+import com.example.benstjohn.jumper.entity.LevelScore;
 
 /**
  * Created by benstjohn on 2017-09-28.

@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
-        applicationId "com.example.benstjohn.windowbreaker"
+        applicationId "com.example.benstjohn.jumper"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
